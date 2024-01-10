@@ -1,0 +1,55 @@
+[build-system]
+requires = [
+  "hatch-vcs>=0.3",
+  "hatchling>=1.12.2",
+]
+build-backend = "hatchling.build"
+
+[project]
+name = "oidpoc"
+authors = [
+    {name = "Hervé Beraud", email = "herveberaud.pro@gmail.com"},
+]
+description = "A simple PoC."
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+classifiers = [
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Development Status :: 3 - Alpha",
+    "Topic :: Software Development",
+    "Topic :: Security",
+]
+dynamic = ["version"]
+dependencies = [
+    "requests"
+]
+
+[project.urls]
+Homepage = "https://github.com/4383/oidpoc"
+History = "https://github.com/4383/oidpoc/blob/main/CHANGELOG.md"
+Sponsor = "https://github.com/sponsors/4383"
+Tracker = "https://github.com/4383/oidpoc/issues"
+Source = "https://github.com/4383/oidpoc"
+
+[project.optional-dependencies]
+dev = ["black", "isort", "pip-tools", "build", "twine", "pre-commit", "commitizen"]
+
+[project.scripts]
+oidpoc = "oidpoc.__main__:main"
+
+[options.packages.find]
+where = "oidpoc"
+exclude = "tests*"
+
+[tool.hatch]
+version.source = "vcs"
